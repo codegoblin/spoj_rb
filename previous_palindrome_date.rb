@@ -9,17 +9,16 @@ require 'date'
 # Definition:
 class Date
   def print_previous_palindrome_date
-    date = sprintf('%02d%02d%.4d', month, mday, year)
     days_in_months = [31,28,31,30,31,30,31,31,30,31,30,31]
+    current_year = self.year - 1
 
-    current_year = date[4..8].to_i - 1
     begin
       # This adjusts for leap years:
       (((current_year % 400) == 0) || ((current_year % 100 != 0) && (current_year % 4 == 0))) ? days_in_months[1] = 29 : days_in_months[1] = 28
 
       yy = current_year.to_s
-      mm = (current_year % 10).to_s + ((current_year / 10) % 10).to_s
-      dd = ((current_year / 100) % 10).to_s + ((current_year / 1000) % 10).to_s
+      mm = yy[3] + yy[2]
+      dd = yy[1] + yy[0]
       m = mm.to_i
       d = dd.to_i
       current_year -= 1
