@@ -2,7 +2,8 @@
 # In this format, the 2nd of October 2001 is a palindrome (a string equal to its reverse): 10022001.
 # Find the previous date that yields a palindrome in this format.
 
-# Given that there can only be one potential palindrome date / year,
+# Given that there can only be one potential palindrome date per year--
+
 
 require 'date'
 
