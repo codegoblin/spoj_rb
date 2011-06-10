@@ -2,7 +2,7 @@
 # In this format, the 2nd of October 2001 is a palindrome (a string equal to its reverse): 10022001.
 # Find the previous date that yields a palindrome in this format.
 
-# Given that there can only be one palindromic date / year,
+# Given that there can only be one potential palindrome date / year,
 
 require 'date'
 
@@ -17,8 +17,8 @@ class Date
       (((current_year % 400) == 0) || ((current_year % 100 != 0) && (current_year % 4 == 0))) ? days_in_months[1] = 29 : days_in_months[1] = 28
 
       yy = current_year.to_s
-      mm = yy[3] + yy[2]
-      dd = yy[1] + yy[0]
+      mm = yy.reverse[0..1]
+      dd = yy.reverse[2..3]
       m = mm.to_i
       d = dd.to_i
       current_year -= 1
