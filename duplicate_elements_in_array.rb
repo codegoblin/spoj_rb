@@ -8,4 +8,4 @@ array = []
 
 array << 23
 h = {}
-puts array.detect{ |e| h[e] || ( ( h[e] = true ) && false ) } # should be 23
+puts array.detect{ |e| h[e] || ( ( h[e] = true ) && false ) } # => 23
